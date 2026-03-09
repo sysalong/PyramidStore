@@ -195,3 +195,15 @@ class Spider(Spider):
         sha = SHA256.new()
         sha.update(text.encode())
         return sha.hexdigest()
+
+if __name__ == "__main__":
+    sp = Spider()
+    formatJo = sp.init([]) # 初始化
+    #formatJo = sp.homeContent(False) # 筛选分类(首页 可选)
+    # formatJo = sp.homeVideoContent() # (首页 可选)
+    # formatJo = sp.searchContent("斗罗",False,'1') # 搜索
+    # formatJo = sp.categoryContent('', '1', False, {}) # 分类
+    # formatJo = sp.detailContent(['139625']) # 详情
+    formatJo = sp.playerContent("","",{}) # 播放
+    # formatJo = sp.localProxy({"":""}) # 代理
+    print(formatJo)
